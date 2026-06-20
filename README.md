@@ -5,11 +5,6 @@
 [![Status](https://img.shields.io/badge/status-Production-green)]()
 [![License](https://img.shields.io/badge/license-Proprietary-red)](LICENSE)
 
-<p align="center">
-  <a href="#"><b>Website</b></a> •
-  <a href="#"><b>Documentation</b></a> •
-  <a href="#"><b>Demo</b></a>
-</p>
 
 > A comprehensive energy monitoring system for tracking consumption, detecting anomalies, and managing alerts in real-time.
 
