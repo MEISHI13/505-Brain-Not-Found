@@ -82,7 +82,7 @@ CREATE TABLE users (
     role VARCHAR(20) DEFAULT 'user',
     last_login DATETIME,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);
+),
 
 -- Energy data table
 CREATE TABLE energy_data (
