@@ -1,0 +1,23 @@
+<?php
+session_start();
+
+function isLoggedIn() {
+    return isset($_SESSION['user_id']);
+}
+
+function requireLogin() {
+    if (!isLoggedIn()) {
+        header('Location: login.php');
+        exit();
+    }
+}
+
+function getUser() {
+    return [
+        'id' => $_SESSION['user_id'] ?? null,
+        'username' => $_SESSION['username'] ?? 'guest',
+        'full_name' => $_SESSION['full_name'] ?? 'Guest User',
+        'role' => $_SESSION['role'] ?? 'viewer'
+    ];
+}
+?>
