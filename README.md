@@ -2,13 +2,16 @@
 ## 505-Brain-Not-Found
 
 **Overview**
+
 EcoStream is a comprehensive energy management and monitoring system designed to help organizations track energy consumption, detect anomalies, and manage alerts in real-time. The system features a modern, responsive dashboard with light/dark mode support and persistent alert management.
 
 **Demo Credentials:**
+
 Username: *admin*
 Password: *password*
 
 **Feature& Description**
+
 📊 Dashboard-Real-time monitoring with summary cards and charts
 🔔 Alerts-Automatic alerts when consumption > 100 kWh
 📈 Analytics-Peak hours, most active building, anomaly detection
@@ -17,6 +20,7 @@ Password: *password*
 🔐 Auth-Secure login with password hashing
 
 **Project Structure**
+
 ecostream/
 ├── config/database.php    # Database config
 ├── includes/auth.php      # Authentication functions
@@ -28,6 +32,7 @@ ecostream/
 └── logout.php             # Logout handler
 
 **Database Setup**
+
 1. Create Database
    CREATE DATABASE ecostream;
    USE ecostream;
@@ -79,6 +84,7 @@ VALUES ('admin', '$2y$10$e5L5z8FQyIksPL2B9cHZ7uFnMQtLdXcVYjB8K5Cx.qzq9Qz6.yy5G',
 ('Tower C', 'Floor 4', 'Logistics', 76.40, 219.90, 14.90, 0.88, 25.50);
 
 **Configuration**
+
 Database (config/database.php):
 $host = 'localhost';
 $dbname = 'ecostream';
@@ -86,11 +92,13 @@ $username = 'root';
 $password = '';
 
 **API Endpoints**
+
 GET	/api.php?action=all --Fetch all records
 POST	/api.php --Add new record
 GET	/api.php?action=export	--Export CSV
 
 **Troubleshooting**
+
 *Issue& Solution*
 Database connection error	--Check MySQL is running, verify credentials
 Login fails	--Ensure admin user exists with password 'password'
