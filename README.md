@@ -42,25 +42,25 @@ EcoStream is a comprehensive energy management and monitoring system designed to
 ecostream/
 │
 ├── config/
-│ └── database.php # Database configuration
+│   └── database.php          # Database configuration
 │
 ├── css/
-│ └── style.css # Custom styles
+│   └── style.css             # Custom styles
 │
 ├── includes/
-│ └── auth.php # Authentication functions
+│   └── auth.php              # Authentication functions
 │
 ├── js/
-│ └── script.js # JavaScript functionality
+│   └── script.js             # JavaScript functionality
 │
-├── api.php # API endpoints
-├── dashboard.php # Main dashboard page
-├── index.php # Landing/redirect page
-├── login.php # Login page
-├── logout.php # Logout handler
-├── register.php # Registration page
-├── README.md # Project documentation
-└── ecostream.sql # Database schema
+├── api.php                   # API endpoints
+├── dashboard.php             # Main dashboard page
+├── index.php                 # Landing/redirect page
+├── login.php                 # Login page
+├── logout.php                # Logout handler
+├── register.php              # Registration page
+├── README.md                 # Project documentation
+└── ecostream.sql             # Database schema
 
 
 ---
@@ -72,7 +72,10 @@ ecostream/
 ```sql
 CREATE DATABASE ecostream;
 USE ecostream;
+```
 
+### 2. Create Tables
+```sql
 -- Users table
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -98,10 +101,15 @@ CREATE TABLE energy_data (
     temperature DECIMAL(10,2),
     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-
+```
+### 3. Insert Admin User
+```sql
 -- Password: password
 INSERT INTO users (username, password, full_name, email, role) 
 VALUES ('admin', '$2y$10$e5L5z8FQyIksPL2B9cHZ7uFnMQtLdXcVYjB8K5Cx.qzq9Qz6.yy5G', 'Administrator', 'admin@ecostream.com', 'admin');
+```
+### 4. Insert Sample Data
+```sql
 INSERT INTO energy_data (building_name, floor, department, consumption_kwh, voltage, current_amps, power_factor, temperature) VALUES
 ('Tower A', 'Floor 1', 'IT', 45.50, 220.50, 12.30, 0.92, 24.50),
 ('Tower A', 'Floor 2', 'Finance', 78.90, 221.00, 15.70, 0.88, 23.80),
@@ -115,7 +123,10 @@ INSERT INTO energy_data (building_name, floor, department, consumption_kwh, volt
 ('Tower C', 'Floor 2', 'Engineering', 95.30, 220.80, 18.40, 0.87, 24.90),
 ('Tower C', 'Floor 3', 'Sales', 52.10, 219.30, 10.20, 0.86, 25.30),
 ('Tower C', 'Floor 4', 'Logistics', 76.40, 219.90, 14.90, 0.88, 25.50);
-
+```
+###  Configuration
+Database (config/database.php)
+```sql
 <?php
 $host = 'localhost';
 $dbname = 'ecostream';
@@ -130,5 +141,24 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 ?>
+```
+### Alert Threshold
+Default threshold is 100 kWh. To change:
+```sql
 // In dashboard.php (JavaScript section)
 const ALERT_THRESHOLD = 100; // Change this value
+```
+
+
+**|API |Endpoints|**
+|Method	|Endpoint|	Description|
+|GET|	/api.php?action=all	|Fetch all records|
+|POST|	/api.php	|Add new record|
+|GET|	/api.php?action=export	|Export CSV|
+
+**Troubleshooting**
+|Issue|	Solution|
+|Database connection error|	Check MySQL is running, verify credentials in config/database.php|
+|Login fails|	Ensure admin user exists with password 'password'|
+|No data shown|	Check energy_data table has data|
+|Theme not saving|	Enable localStorage in browser|
