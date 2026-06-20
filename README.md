@@ -150,15 +150,21 @@ const ALERT_THRESHOLD = 100; // Change this value
 ```
 
 
-**|API |Endpoints|**
-|Method	|Endpoint|	Description|
-|GET|	/api.php?action=all	|Fetch all records|
-|POST|	/api.php	|Add new record|
-|GET|	/api.php?action=export	|Export CSV|
+## 📊 API Endpoints
 
-**Troubleshooting**
-|Issue|	Solution|
-|Database connection error|	Check MySQL is running, verify credentials in config/database.php|
-|Login fails|	Ensure admin user exists with password 'password'|
-|No data shown|	Check energy_data table has data|
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api.php?action=all` | Fetch all records |
+| POST | `/api.php` | Add new record |
+| GET | `/api.php?action=export` | Export CSV |
+
+---
+
+## 🛠️ Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Database connection error | Check MySQL is running, verify credentials in `config/database.php` |
+| Login fails | Ensure admin user exists with password 'password' |
+| No data shown | Check `energy_data` table has data |
 |Theme not saving|	Enable localStorage in browser|
