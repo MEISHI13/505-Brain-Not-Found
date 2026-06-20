@@ -39,6 +39,7 @@ EcoStream is a comprehensive energy management and monitoring system designed to
 ---
 
 ## 📁 Project Structure
+```
 ecostream/
 │
 ├── config/
@@ -61,7 +62,7 @@ ecostream/
 ├── register.php              # Registration page
 ├── README.md                 # Project documentation
 └── ecostream.sql             # Database schema
-
+```
 
 ---
 
