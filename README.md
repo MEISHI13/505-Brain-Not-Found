@@ -1,4 +1,5 @@
-# 505-Brain-Not-Found
+# ECOSTREAM
+## 505-Brain-Not-Found
 
 Overview
 EcoStream is a comprehensive energy management and monitoring system designed to help organizations track energy consumption, detect anomalies, and manage alerts in real-time. The system features a modern, responsive dashboard with light/dark mode support and persistent alert management.
